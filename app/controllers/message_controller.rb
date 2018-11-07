@@ -3,7 +3,7 @@ class MessageController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @messages = Message.all
+    @messages = Message.last(5).reverse
     @message = Message.new
   end
 
