@@ -1,5 +1,11 @@
 <div>Hello world ! </div>
 
+<%= form_tag message_index_path, method: :post do %>
+  <%= text_area_tag 'message[content]', @message.content %>
+  <%= submit_tag "Save" %>
+<% end %>
+
+
 <% @messages.each do |message| %>
   <div class="message">
     <div class="message-author"><%= message.user.email %>  </div>
