@@ -10,9 +10,9 @@ user = User.create({email: "jules.laurent@blabla.com", password: "password", pas
 
 
 Message.create([
-    {content: "Message 1", user: user},
-    {content: "Message 2", user: user},
-    {content: "Message 3", user: user},
-    {content: "Message 4", user: user},
-    {content: "Message 5", user: user}
+    {content: "Message 1", user_id: user.id},
+    {content: "Message 2", user_id: user.id},
+    {content: "Message 3", user_id: user.id},
+    {content: "Message 4", user_id: user.id},
+    {content: "Message 5", user_id: user.id}
                ])
