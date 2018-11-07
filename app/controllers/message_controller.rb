@@ -23,26 +23,13 @@ class MessageController < ApplicationController
 
   def like
     @message = Message.find(params[:id])
-    if @message.likes == nil
-      @message.update({likes: 1})
-    else
-      @message.update({likes: @message.likes + 1})
-    end
-
+    @message.update({likes: @message.likes + 1})
     redirect_to message_index_path
   end
 
   def dislike
     @message = Message.find(params[:id])
-    if @message.dislikes == nil
-      @message.update({dislikes: 1})
-    else
-      @message.update({dislikes: @message.dislikes + 1})
-    end
-
+    @message.update({dislikes: @message.dislikes + 1})
     redirect_to message_index_path
   end
-
-
-
 end
