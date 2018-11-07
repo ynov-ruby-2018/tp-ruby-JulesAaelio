@@ -10,5 +10,14 @@
   <div class="message">
     <div class="message-author"><%= message.user.email %>  </div>
     <div class="message-content"> <%= message.content %> </div>
+    <div class="message-toggles">
+      <%= form_tag message_like_path(message.id), method: :post do %>
+        <%= submit_tag "Like ( #{message.likes} )" %>
+      <% end %>
+
+      <%= form_tag message_dislike_path(message.id), method: :post do %>
+        <%= submit_tag "Dislike ( #{message.dislikes} )" %>
+      <% end %>
+    </div>
   </div>
 <% end %>
