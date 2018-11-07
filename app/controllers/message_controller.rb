@@ -20,4 +20,16 @@ class MessageController < ApplicationController
         :content,
     ).merge(user_id: current_user.id)
   end
+
+  def like
+    @message = Message.find(params[:id])
+    @message.update({likes: @message.likes + 1})
+    redirect_to message_index_path
+  end
+
+  def dislike
+    @message = Message.find(params[:id])
+    @message.update({dislikes: @message.dislikes + 1})
+    redirect_to message_index_path
+  end
 end
